@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   inheritance.cpp                                    :+:      :+:    :+:   */
+/*   inheritanceMultilevel.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdemirel <hdemirel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/12 16:49:41 by hdemirel          #+#    #+#             */
-/*   Updated: 2024/08/12 17:00:55 by hdemirel         ###   ########.fr       */
+/*   Created: 2024/08/12 17:01:02 by hdemirel          #+#    #+#             */
+/*   Updated: 2024/08/12 17:05:01 by hdemirel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
-class Person  //Base Class  
+class MyClass // Parent Class
 {
     public:
-        std::string name; 
+        void myFunction()
+        {
+            std::cout << "Coming from parent class.";
+        }
 };
 
-class Student: public Person // Derived Class
+class MyChild: public MyClass // Child Class
 {
-    public:
-        std::string surname;
+    
+};
+
+class MyGrandChild: public MyChild // GrandChild Class
+{
+    
 };
 
 int main()
 {
-    Student student;
-
-    student.name = "Ali";
-    student.surname = "Can";
-
-    std::cout << student.name + ' ' + student.surname;
+    MyClass myObj;
+    myObj.myFunction();
 }
